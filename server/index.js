@@ -30,7 +30,7 @@ app.use(
       maxAge: parseInt(process.env.SESSION_COOKIE_MAX_AGE, 10),
       secure: true,
     },
-  })
+  }),
 );
 
 const allowedOrigins = process.env.ALLOWED_HOSTS?.split(", ") || [
