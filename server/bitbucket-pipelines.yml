@@ -1,0 +1,30 @@
+image: node:20-alpine
+
+pipelines:
+  branches:
+    master:
+      - parallel:
+          - step:
+              name: "Build and Test"
+              caches:
+                - node
+              script:
+                - npm install
+          - step:
+              name: "Lint"
+              script:
+                - echo "Your linting goes here..."
+          - step:
+              name: "Security scan"
+              script:
+                - pipe: atlassian/git-secrets-scan:0.4.3
+      - step:
+          name: "Deploy"
+          trigger: "manual"
+          script:
+            - echo "Deploying code..."
+            - pipe: atlassian/ssh-run:0.2.2
+              variables:
+                SSH_USER: $CLOUD_SSH_USER
+                SERVER: $CLOUD_MACH_IP
+                COMMAND: "sudo ./install.sh"

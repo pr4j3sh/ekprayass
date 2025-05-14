@@ -1,0 +1,11 @@
+.gitignore
+package-lock*
+build*
+node-modules*
+.env
+docker-compose*
+Dockerfile*
+install.sh
+bitbucket-pipelines.yml
+secret.pem
+todo
