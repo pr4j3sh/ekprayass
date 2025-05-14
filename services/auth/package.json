@@ -1,0 +1,21 @@
+{
+  "name": "ekprayass-auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Running tests..\" && exit 1",
+    "start": "node --env-file=.env .",
+    "dev": "nodemon --env-file=.env.local ."
+  },
+  "keywords": [],
+  "author": "Prajesh Pratap Singh <prajesh.eleven118@gmail.com> (https://pr4j3sh.github.io/pr4j3sh/)",
+  "license": "MIT",
+  "description": "express server template for creating apis without the hassle",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "exhandlers": "^1.1.5",
+    "express": "^4.21.1"
+  }
+}
